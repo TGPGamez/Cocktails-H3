@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cocktails_H3.Models.Entities
 {
-    public abstract class Liquid : Ingridient
+    public abstract class Liquid : Ingredient
     {
         public double AmountML { get; set; }
 
@@ -15,9 +15,19 @@ namespace Cocktails_H3.Models.Entities
             this.AmountML = amountML;
         }
 
-        public Liquid()
+        public Liquid(string name) : base(name)
         {
 
+        }
+
+        public Liquid() : base()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Name} : {this.AmountML} ml";
         }
     }
 }

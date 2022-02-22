@@ -13,6 +13,11 @@ namespace Cocktails_H3.Models.Entities
 
         }
 
+        public Soft(string name) : base(name)
+        {
+
+        }
+
         public Soft() : base()
         {
 

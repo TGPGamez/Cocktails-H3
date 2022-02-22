@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cocktails_H3.Models.Entities
 {
-    public enum GlasType
+    public enum GlassType
     {
         OldFashioned,
         Collins,

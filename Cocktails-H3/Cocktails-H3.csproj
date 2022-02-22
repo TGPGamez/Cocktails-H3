@@ -54,12 +54,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DrinkController.cs" />
+    <Compile Include="Controllers\IController.cs" />
+    <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Models\Entities\Drink.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Models\Entities\Alcohol.cs" />
     <Compile Include="Models\Entities\Cocktail.cs" />
     <Compile Include="Models\Entities\Enums.cs" />
-    <Compile Include="Models\Entities\Ingridient.cs" />
+    <Compile Include="Models\Entities\Garnish.cs" />
+    <Compile Include="Models\Entities\Ingredient.cs" />
     <Compile Include="Models\Entities\Liquid.cs" />
     <Compile Include="Models\CocktailDBContext.cs" />
     <Compile Include="Models\Entities\Soft.cs" />

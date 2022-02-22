@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace Cocktails_H3.Models.Entities
 {
-    public abstract class Ingridient
+    public abstract class Ingredient
     {
         public int ID { get; set; }
         public string Name { get; set; }
 
-        public Ingridient(string name)
+        public Ingredient(string name)
         {
             this.Name = name;
         }
 
-        public Ingridient()
+        public Ingredient()
         {
 
         }

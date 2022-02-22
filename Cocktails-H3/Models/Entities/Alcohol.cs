@@ -13,6 +13,11 @@ namespace Cocktails_H3.Models.Entities
 
         }
 
+        public Alcohol(string name) : base(name)
+        {
+
+        }
+
         public Alcohol() : base()
         {
 

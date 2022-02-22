@@ -11,18 +11,18 @@ namespace Cocktails_H3.Models.Entities
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public List<Ingridient> Ingridients { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
 
 
-        public Cocktail(string name, List<Ingridient> ingridients)
+        public Cocktail(string name, List<Ingredient> ingredients)
         {
             this.Name = name;
-            this.Ingridients = ingridients;
+            this.Ingredients = ingredients;
         }
 
-        public Cocktail()
+        public Cocktail() : base()
         {
-            
+            this.Ingredients = new List<Ingredient>();
         }
     }
 }

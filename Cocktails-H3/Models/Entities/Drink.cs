@@ -10,18 +10,18 @@ namespace Cocktails_H3.Models.Entities
     public class Drink
     {
         public int ID { get; set; }
-        public GlasType GlasType { get; set; }
+        public GlassType GlasType { get; set; }
         public Cocktail Cocktail { get; set; }
 
-        public Drink(GlasType glasType, Cocktail cocktail)
+        public Drink(GlassType glasType, Cocktail cocktail)
         {
             this.GlasType = glasType;
             this.Cocktail = cocktail;
         }
 
-        public Drink()
+        public Drink() : base()
         {
-
+            this.Cocktail = new Cocktail();
         }
     }
 }
