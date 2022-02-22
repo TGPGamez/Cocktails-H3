@@ -30,8 +30,8 @@ namespace Cocktails_H3
             {
                 foreach (Drink drink in ctx.Drinks)
                 {
-                    Console.WriteLine("Test");
-                    //Console.WriteLine($"{drink.ID}: {drink.Cocktail.Name}");
+                    ctx.Entry(drink).Reference("Cocktail").Load();
+                    Console.WriteLine($"{drink.Cocktail.Name}");
                 }
             }
             Console.WriteLine("Te");
