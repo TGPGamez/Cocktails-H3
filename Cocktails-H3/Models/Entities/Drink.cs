@@ -21,7 +21,7 @@ namespace Cocktails_H3.Models.Entities
 
         public Drink() : base()
         {
-            this.Cocktail = new Cocktail();
+            
         }
     }
 }

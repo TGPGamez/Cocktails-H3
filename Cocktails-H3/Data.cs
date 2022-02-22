@@ -11,63 +11,63 @@ namespace Cocktails_H3
     public static class Data
     {
         private static DrinkController drCon = new DrinkController();
-        //private static IngredientController inCon = new IngredientController();
+        private static IngredientController inCon = new IngredientController();
 
 
         public static void SetDefaultIngredients()
         {
-            //inCon.DeleteAll();
-            //inCon.Create(new Soft("Lime Juice"));
-            //inCon.Create(new Soft("Fresh Cream"));
-            //inCon.Create(new Soft("Almond Syrup"));
-            //inCon.Create(new Soft("Orange Juice"));
-            //inCon.Create(new Soft("Tomato Juice"));
-            //inCon.Create(new Soft("Water"));
-            //inCon.Create(new Soft("Pink Grapefruit Juice"));
-            //inCon.Create(new Soft("Cranberry Juice"));
-            //inCon.Create(new Soft("Soda"));
-            //inCon.Create(new Soft("Lemon Juice"));
-            //inCon.Create(new Soft("Pineapple Juice"));
-            //inCon.Create(new Soft("Coconut Cream"));
-            //inCon.Create(new Soft("Cola"));
-            //inCon.Create(new Soft("Peach Puree"));
-            //inCon.Create(new Alcohol("Triple Sec"));
-            //inCon.Create(new Alcohol("Tequila"));
-            //inCon.Create(new Alcohol("Dark Rum"));
-            //inCon.Create(new Alcohol("Orange Curacao"));
-            //inCon.Create(new Alcohol("Kahlua"));
-            //inCon.Create(new Alcohol("Vodka"));
-            //inCon.Create(new Alcohol("Cachaca"));
-            //inCon.Create(new Alcohol("Bourbon"));
-            //inCon.Create(new Alcohol("Italian Sweet Vermouth"));
-            //inCon.Create(new Alcohol("French Dry Vermout"));
-            //inCon.Create(new Alcohol("Gin"));
-            //inCon.Create(new Alcohol("White Rum"));
-            //inCon.Create(new Alcohol("Cointreau"));
-            //inCon.Create(new Alcohol("Cherry Brandy"));
-            //inCon.Create(new Alcohol("Sloe Gin"));
-            //inCon.Create(new Alcohol("Prosecco"));
+            inCon.DeleteAll();
+            inCon.Create(new Soft("Lime Juice"));
+            inCon.Create(new Soft("Fresh Cream"));
+            inCon.Create(new Soft("Almond Syrup"));
+            inCon.Create(new Soft("Orange Juice"));
+            inCon.Create(new Soft("Tomato Juice"));
+            inCon.Create(new Soft("Water"));
+            inCon.Create(new Soft("Pink Grapefruit Juice"));
+            inCon.Create(new Soft("Cranberry Juice"));
+            inCon.Create(new Soft("Soda"));
+            inCon.Create(new Soft("Lemon Juice"));
+            inCon.Create(new Soft("Pineapple Juice"));
+            inCon.Create(new Soft("Coconut Cream"));
+            inCon.Create(new Soft("Cola"));
+            inCon.Create(new Soft("Peach Puree"));
+            inCon.Create(new Alcohol("Triple Sec"));
+            inCon.Create(new Alcohol("Tequila"));
+            inCon.Create(new Alcohol("Dark Rum"));
+            inCon.Create(new Alcohol("Orange Curacao"));
+            inCon.Create(new Alcohol("Kahlua"));
+            inCon.Create(new Alcohol("Vodka"));
+            inCon.Create(new Alcohol("Cachaca"));
+            inCon.Create(new Alcohol("Bourbon"));
+            inCon.Create(new Alcohol("Italian Sweet Vermouth"));
+            inCon.Create(new Alcohol("French Dry Vermout"));
+            inCon.Create(new Alcohol("Gin"));
+            inCon.Create(new Alcohol("White Rum"));
+            inCon.Create(new Alcohol("Cointreau"));
+            inCon.Create(new Alcohol("Cherry Brandy"));
+            inCon.Create(new Alcohol("Sloe Gin"));
+            inCon.Create(new Alcohol("Prosecco"));
 
-            //inCon.Create(new Garnish("Salt Rim"));
-            //inCon.Create(new Garnish("Crushed Ice"));
-            //inCon.Create(new Garnish("Lime Segment"));
-            //inCon.Create(new Garnish("Lime Section"));
-            //inCon.Create(new Garnish("Maraschino Cherry"));
-            //inCon.Create(new Garnish("Caster Sugar"));
-            //inCon.Create(new Garnish("Ice Cube"));
-            //inCon.Create(new Garnish("Celery Stick"));
-            //inCon.Create(new Garnish("Worcestershire Sauce"));
-            //inCon.Create(new Garnish("Orange Slice"));
-            //inCon.Create(new Garnish("Brown Sugar"));
-            //inCon.Create(new Garnish("Cube Caster Sugar"));
-            //inCon.Create(new Garnish("Dash Angostura Bitters"));
-            //inCon.Create(new Garnish("Orange Peel"));
-            //inCon.Create(new Garnish("Orange Segment"));
-            //inCon.Create(new Garnish("Ice"));
-            //inCon.Create(new Garnish("Olive"));
-            //inCon.Create(new Garnish("Mint Leave"));
-            //inCon.Create(new Garnish("Splash Soda Water"));
-            //inCon.Create(new Garnish("Pineapple Segment"));
+            inCon.Create(new Garnish("Salt Rim"));
+            inCon.Create(new Garnish("Crushed Ice"));
+            inCon.Create(new Garnish("Lime Segment"));
+            inCon.Create(new Garnish("Lime Section"));
+            inCon.Create(new Garnish("Maraschino Cherry"));
+            inCon.Create(new Garnish("Caster Sugar"));
+            inCon.Create(new Garnish("Ice Cube"));
+            inCon.Create(new Garnish("Celery Stick"));
+            inCon.Create(new Garnish("Worcestershire Sauce"));
+            inCon.Create(new Garnish("Orange Slice"));
+            inCon.Create(new Garnish("Brown Sugar"));
+            inCon.Create(new Garnish("Cube Caster Sugar"));
+            inCon.Create(new Garnish("Dash Angostura Bitters"));
+            inCon.Create(new Garnish("Orange Peel"));
+            inCon.Create(new Garnish("Orange Segment"));
+            inCon.Create(new Garnish("Ice"));
+            inCon.Create(new Garnish("Olive"));
+            inCon.Create(new Garnish("Mint Leave"));
+            inCon.Create(new Garnish("Splash Soda Water"));
+            inCon.Create(new Garnish("Pineapple Segment"));
         }
 
 

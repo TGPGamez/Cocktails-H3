@@ -70,7 +70,7 @@ namespace Cocktails_H3.Controllers
                 foreach (Drink drink in ctx.Drinks)
                 {
                     ctx.Entry(drink).Reference(d => d.Cocktail).Load();
-                    //NOT WORKING
+                    
                     ctx.Entry(drink.Cocktail).Collection(c => c.Ingredients).Load();
                     drinks.Add(drink);
                 }

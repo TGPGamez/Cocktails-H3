@@ -13,7 +13,7 @@ namespace Cocktails_H3
     class Program
     {
         static DrinkController drinkController = new DrinkController();
-        //static IngredientController ingredientController = new IngredientController();
+        static IngredientController ingredientController = new IngredientController();
 
         static int Main(string[] args)
         {
@@ -93,15 +93,14 @@ namespace Cocktails_H3
         #region Create drink
         static void CreateCocktail()
         {
-            Drink drink = new Drink();
             Console.Clear();
             try
             {
-                Create_GetDrinkNameInput(drink);
-                Create_GetDrinkGlass(drink);
-                Create_GetIngredients(drink);
+                string name = Create_GetDrinkNameInput();
+                GlassType glassType = Create_GetDrinkGlass();
+                List<Ingredient> ingredients = Create_GetIngredients();
 
-                //drinkController.Create(drink);
+                drinkController.Create(new Drink(glassType, new Cocktail(name, ingredients)));
                 Console.WriteLine("Drink was created!");
             }
             catch (Exception ex)
@@ -114,7 +113,7 @@ namespace Cocktails_H3
             }
         }
 
-        static void Create_GetDrinkNameInput(Drink drink)
+        static string Create_GetDrinkNameInput()
         {
             string nameInput = " ";
             while (string.IsNullOrWhiteSpace(nameInput))
@@ -123,10 +122,10 @@ namespace Cocktails_H3
                 Console.Write("Name of drink: ");
                 nameInput = Console.ReadLine();
             }
-            drink.Cocktail.Name = nameInput;
+            return nameInput;
         }
 
-        static void Create_GetDrinkGlass(Drink drink)
+        static GlassType Create_GetDrinkGlass()
         {
             string[] glassTypes = Enum.GetNames(typeof(GlassType));
             int typeInput = -1;
@@ -141,7 +140,7 @@ namespace Cocktails_H3
                 typeInput = IsGlassType(int.Parse(Console.ReadLine()));
             }
             
-            drink.GlasType = (GlassType)typeInput;
+            return (GlassType)typeInput;
         }
 
         static int IsGlassType(int value)
@@ -155,26 +154,33 @@ namespace Cocktails_H3
             return value;
         }
 
-        static void Create_GetIngredients(Drink drink)
+        static List<Ingredient> Create_GetIngredients(List<Ingredient> ingredients = null)
         {
-            //List<Ingredient> ingredients = ingredientController.GetAll();
-            List<Ingredient> ingredients = new List<Ingredient>();
-            for (int i = 0; i < ingredients.Count; i++)
+            List<Ingredient> ingredients_in_db = ingredientController.GetAll();
+            if (ingredients == null)
             {
-                Console.WriteLine($" {i}. {ingredients[i]}");
+                ingredients = new List<Ingredient>();
             }
-            Console.WriteLine("\r\nIngredient:");
+            for (int i = 0; i < ingredients_in_db.Count; i++)
+            {
+                Console.WriteLine($" {i}. {ingredients_in_db[i]}");
+            }
+            Console.Write("\r\nIngredient: ");
             int choice = int.Parse(Console.ReadLine());
 
-            Console.Write("\r\nAmount (in ml):");
-            int amount = int.Parse(Console.ReadLine());
+            Console.Write("\r\nAmount: ");
+            string amount = Console.ReadLine();
 
-            if (ingredients[choice].GetType() == typeof(Soft))
+            if (ingredients_in_db[choice].GetType() == typeof(Soft))
             {
-
-            } else if (ingredients[choice].GetType() == typeof(Alcohol))
+                ingredients.Add(new Soft(ingredients_in_db[choice].Name, int.Parse(amount)));
+            } else if (ingredients_in_db[choice].GetType() == typeof(Alcohol))
             {
-                drink.Cocktail.Ingredients.Add(new Alcohol(ingredients[choice].Name, amount));
+                ingredients.Add(new Alcohol(ingredients_in_db[choice].Name, int.Parse(amount)));
+            }
+            else if (ingredients_in_db[choice].GetType() == typeof(Garnish))
+            {
+                ingredients.Add(new Garnish(ingredients_in_db[choice].Name, amount));
             }
 
             Console.WriteLine("Do you want more ingredients, type 'Y' ");
@@ -182,8 +188,9 @@ namespace Cocktails_H3
 
             if (key.Key == ConsoleKey.Y)
             {
-                Create_GetIngredients(drink);
+                Create_GetIngredients(ingredients);
             }
+            return ingredients;
 
         }
 

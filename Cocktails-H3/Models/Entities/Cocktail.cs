@@ -22,7 +22,7 @@ namespace Cocktails_H3.Models.Entities
 
         public Cocktail() : base()
         {
-            this.Ingredients = new List<Ingredient>();
+            
         }
     }
 }
